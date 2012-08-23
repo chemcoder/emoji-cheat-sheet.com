@@ -25,7 +25,7 @@ module SimpleS3Deploy
       images.each do |img|
         img.rename_to_digested_filename
         stylesheets.each do |stylesheet|
-          stylesheet.data.gsub! img.original_filename, img.digested_filename
+          stylesheet.data.gsub! "\/#{img.original_filename}", "\/#{img.digested_filename}"
         end
       end
 

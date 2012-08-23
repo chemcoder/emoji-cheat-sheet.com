@@ -20,7 +20,8 @@ describe SimpleS3Deploy::CacheBuster do
 
     expected_paths = [
       File.join(emoji_directory, '+1.png'),
-      File.join(emoji_directory, '-1.png')
+      File.join(emoji_directory, '-1.png'),
+      File.join(emoji_directory, 'same_name-1.png')
     ]
     subject.images.map { |i| i.path }.must_equal expected_paths
   end
